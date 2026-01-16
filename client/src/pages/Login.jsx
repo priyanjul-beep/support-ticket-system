@@ -17,9 +17,15 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const url = isLogin
-        ? "http://localhost:5000/api/auth/login"
-        : "http://localhost:5000/api/auth/register";
+      // const url = isLogin
+      //   ? "http://localhost:5000/api/auth/login"
+      //   : "http://localhost:5000/api/auth/register";
+      const API_URL = import.meta.env.VITE_API_URL;
+
+    const url = isLogin
+    ? `${API_URL}/api/auth/login`
+    : `${API_URL}/api/auth/register`;
+
 
       const payload = isLogin
         ? { email, password }
